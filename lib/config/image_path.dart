@@ -38,7 +38,7 @@ class ImagePath {
   static const String interview = 'assert/interview.png';
   static const String r1 = 'assert/r1.png';
   static const String r2 = 'assert/r2.png';
-  static const String e_recruitment = 'assert/e_recruitment.png';
+  static const String e_recruitment = 'assert/linkedin.png';
   static const String friender_meetup = 'assert/friender_meetup.png';
   static const String the_gujarat_news = 'assert/the_gujarat_news.png';
   static const String profileImage = 'assert/profile01.png';

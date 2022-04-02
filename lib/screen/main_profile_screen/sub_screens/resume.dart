@@ -27,12 +27,12 @@ class _ServicesScreenState extends State<ServicesScreen> {
                       imagePath: ImagePath.e_recruitment,
                       resumeDescription: "Find a job",
                       resumeDescription2: "Post a job",
-                      itemDescription: 'E-Recruitment India is a global online employment solution for people seeking jobs and the employers who need great people.',
-                      title: 'E - Recruitment',
+                      itemDescription: 'Linked In is a global online employment solution for people seeking jobs and the employers who need great people.',
+                      title: 'Linked In',
                       subTitle: 'Job Solution',
                       thirdTitle: 'Employment Solutions',
                       onTap: () {
-                        launch("https://erecruitmentindia.wixsite.com/jobsolution");
+                        launch("https://www.linkedin.com/");
                       }),
                   jobCardView(
                       resumeScreenSize: true,

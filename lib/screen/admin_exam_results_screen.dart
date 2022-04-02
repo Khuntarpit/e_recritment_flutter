@@ -121,7 +121,7 @@ class _AdminExamResultsScreenState extends State<AdminExamResultsScreen> {
                                 style: TextStyle(
                                     fontSize: 15.5,
                                     fontWeight: FontWeight.bold,
-                                    color: AppColors.redColor),
+                                    color: AppColors.facebookLogoColor),
                               ),
                               Expanded(
                                 child: Text(
