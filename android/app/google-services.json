@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "882022009956",
+    "project_id": "e-recruitment-1945d",
+    "storage_bucket": "e-recruitment-1945d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882022009956:android:d7c784da1537779fd72371",
+        "android_client_info": {
+          "package_name": "com.e_recruitment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882022009956-57eob7m4f9qgf0jstv6jgug5s5rmfj7i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnPgIIE3nYLCKxib89XvY9AwQmG73Ufi0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882022009956-57eob7m4f9qgf0jstv6jgug5s5rmfj7i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
