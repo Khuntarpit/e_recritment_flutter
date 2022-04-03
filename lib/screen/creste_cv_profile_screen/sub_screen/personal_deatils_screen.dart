@@ -71,7 +71,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                     textField(hintText: 'Enter Email', controller: email, isValidate: true, validationMassage: 'Email', isEmailValidator: true),
                     titleText(title: 'Phone No', textSize: 19),
                     textField(hintText: 'Enter Phone No', keyBordType: TextInputType.number, controller: phone, isValidate: true, validationMassage: 'Phone'),
-                    titleText(title: 'Photo ( OPTIONAL )', textSize: 19),
+                    titleText(title: 'Photo', textSize: 19),
                     Row(
                       children: [
                        widget.image != null

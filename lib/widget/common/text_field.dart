@@ -11,6 +11,7 @@ Widget commonTextField({
   IconButton suffixIcon,
   bool isValidate = false,
   bool isEmailValidator = false,
+  TextInputType keyboardType
 }) {
   return Column(
     children: [
@@ -21,6 +22,7 @@ Widget commonTextField({
         child: TextFormField(
           obscureText: obscureText,
           controller: controller,
+          keyboardType: keyboardType ?? TextInputType.text,
           validator: isValidate
               ? (value) {
                   if (value.length == 0) {

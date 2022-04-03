@@ -46,7 +46,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     isExpand: 10,
                     onTap: () {
                       data.helpTips = help.text;
-                      widget.helpData(help.text);
+                     if(help.text.isNotEmpty) widget.helpData(help.text);
                       Navigator.pop(context);
                     }),
               ],

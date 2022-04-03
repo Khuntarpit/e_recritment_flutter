@@ -61,6 +61,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     commonTextField(
                       hintText: 'Mobile number',
                       controller: mobileNumber,
+                      keyboardType: TextInputType.number,
                       preFixIcon: Icons.phone_outlined,
                       isValidate: true,
                       validationMassage: 'Mobile number',

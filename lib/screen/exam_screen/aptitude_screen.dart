@@ -56,7 +56,7 @@ class _AptitudeScreenState extends State<AptitudeScreen> {
   submitExamData(List answers) async {
     var userData = await LoginRepository.submitExamData(context: context,answers: answers);
     if(userData != null){
-      Get.to(() => ExamResultScreen(
+      Get.off(() => ExamResultScreen(
         attemptQuestions: answers.length,
       ));
     }

@@ -53,7 +53,7 @@ class _ExamScreenState extends State<ExamScreen> {
               isExpandHeight: 15,
               textSize: 17,
               onTap: () {
-                Get.to(() => AptitudeScreen());
+                Get.off(() => AptitudeScreen());
               }),
         ],
       ),

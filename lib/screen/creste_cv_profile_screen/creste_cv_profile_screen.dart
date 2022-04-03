@@ -183,19 +183,21 @@ class _CreateCvProfileState extends State<CreateCvProfile> {
                               },
                             ));
                       }),
+                  //More Sections
+                  titleText(title: 'More Sections (OPTIONAL)',textSize: 20),
                   commonListView(
                       isShowFillDataTrue: skill == null ? false : true,
                       title: 'Skills',
                       imagePath: ImagePath.skills,
                       onTap: () {
                         Get.to(() => SkillScreen(
-                              skill: skill,
-                              skillData: (v) {
-                                setState(() {
-                                  skill = v;
-                                });
-                              },
-                            ));
+                          skill: skill,
+                          skillData: (v) {
+                            setState(() {
+                              skill = v;
+                            });
+                          },
+                        ));
                       }),
                   commonListView(
                       isShowFillDataTrue: objective == null ? false : true,
@@ -203,56 +205,54 @@ class _CreateCvProfileState extends State<CreateCvProfile> {
                       imagePath: ImagePath.objective,
                       onTap: () {
                         Get.to(() => ObjectiveScreen(
-                              objectiveData: (v) {
-                                setState(() {
-                                  objective = v;
-                                });
-                              },
-                              objective: objective,
-                            ));
+                          objectiveData: (v) {
+                            setState(() {
+                              objective = v;
+                            });
+                          },
+                          objective: objective,
+                        ));
                       }),
                   commonListView(
                       isShowFillDataTrue:
-                          refName == null || refJobTitle == null || refCompanyName == null || refEmail == null || refPhone == null ? false : true,
+                      refName == null || refJobTitle == null || refCompanyName == null || refEmail == null || refPhone == null ? false : true,
                       title: 'References',
                       imagePath: ImagePath.reference,
                       onTap: () {
                         Get.to(() => ReferenceScreen(
-                              refPhone: refPhone,
-                              refName: refName,
-                              refJobTitle: refJobTitle,
-                              refEmail: refEmail,
-                              refCompanyName: refCompanyName,
-                              refCompanyNameData: (v) {
-                                setState(() {
-                                  refCompanyName = v;
-                                });
-                              },
-                              refEmailData: (v) {
-                                setState(() {
-                                  refEmail = v;
-                                });
-                              },
-                              refJobTitleData: (v) {
-                                setState(() {
-                                  refJobTitle = v;
-                                });
-                              },
-                              refNameData: (v) {
-                                setState(() {
-                                  refName = v;
-                                });
-                              },
-                              refPhoneData: (v) {
-                                setState(() {
-                                  refPhone = v;
-                                });
-                              },
-                            ));
+                          refPhone: refPhone,
+                          refName: refName,
+                          refJobTitle: refJobTitle,
+                          refEmail: refEmail,
+                          refCompanyName: refCompanyName,
+                          refCompanyNameData: (v) {
+                            setState(() {
+                              refCompanyName = v;
+                            });
+                          },
+                          refEmailData: (v) {
+                            setState(() {
+                              refEmail = v;
+                            });
+                          },
+                          refJobTitleData: (v) {
+                            setState(() {
+                              refJobTitle = v;
+                            });
+                          },
+                          refNameData: (v) {
+                            setState(() {
+                              refName = v;
+                            });
+                          },
+                          refPhoneData: (v) {
+                            setState(() {
+                              refPhone = v;
+                            });
+                          },
+                        ));
                       }),
 
-                  //More Sections
-                  titleText(title: 'More Sections'),
                   commonListView(
                       isShowFillDataTrue: projectTitle == null ? false : true,
                       title: 'Projects',
@@ -275,7 +275,7 @@ class _CreateCvProfileState extends State<CreateCvProfile> {
                       }),
 
                   //Manage Sections
-                  titleText(title: 'Manage Sections'),
+                  titleText(title: 'Manage Sections (OPTIONAL)',textSize: 20),
                   commonListView(
                       isShowFillDataTrue: help == null ? false : true,
                       title: 'Help',
@@ -305,14 +305,14 @@ class _CreateCvProfileState extends State<CreateCvProfile> {
                           showToastMessage(context: context, message: 'please Fill up Education');
                         } else if (companyName == null) {
                           showToastMessage(context: context, message: 'please Fill up Experience');
-                        } else if (skill == null) {
-                          showToastMessage(context: context, message: 'please Fill up Skill');
-                        } else if (objective == null) {
-                          showToastMessage(context: context, message: 'please Fill up Objective');
-                        } else if (refName == null) {
-                          showToastMessage(context: context, message: 'please Fill up Reference');
-                        } else if (projectTitle == null) {
-                          showToastMessage(context: context, message: 'please Fill up Projects');
+                        // } else if (skill == null) {
+                        //   showToastMessage(context: context, message: 'please Fill up Skill');
+                        // } else if (objective == null) {
+                        //   showToastMessage(context: context, message: 'please Fill up Objective');
+                        // } else if (refName == null) {
+                        //   showToastMessage(context: context, message: 'please Fill up Reference');
+                        // } else if (projectTitle == null) {
+                        //   showToastMessage(context: context, message: 'please Fill up Projects');
                         } else {
                           createCv(context: context);
                         }

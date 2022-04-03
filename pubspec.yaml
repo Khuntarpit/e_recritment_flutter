@@ -35,6 +35,7 @@ dependencies:
   image_picker: ^0.6.7+11
   agora_rtc_engine: ^3.4.6
   permission_handler:
+  dio: ^3.0.9
 
 dev_dependencies:
   flutter_test:

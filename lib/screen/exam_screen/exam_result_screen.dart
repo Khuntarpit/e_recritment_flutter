@@ -159,7 +159,7 @@ class _ExamResultScreenState extends State<ExamResultScreen> {
                     isExpand: 40,
                     textSize: 14,
                     onTap: (){
-                      Get.to(() => InterviewScheduleScreen());
+                      Get.off(() => InterviewScheduleScreen());
                     }
                   ),
                 ],

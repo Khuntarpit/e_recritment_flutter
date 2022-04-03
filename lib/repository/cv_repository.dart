@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:dio/dio.dart';
 import 'package:e_recruitment/config/app_constant.dart';
 import 'package:e_recruitment/config/default_data.dart';
 import 'package:e_recruitment/model/cv_model.dart';
@@ -72,29 +73,26 @@ class CvRepository {
       "exam_result": "examResult",
       "isActive": "true",
       "experience": jobExperience,
+      "image": (await MultipartFile.fromFile(image.path))
     };
-    print("Data========$data");
-    var request = http.MultipartRequest(
-      "POST",
-      Uri.parse("${DefaultApiString.endPoint}${DefaultApiString.createCv}"),
-    );
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     var token = sharedPreferences.getString(PrefString.token);
-    request.headers.addAll({
-      'Authorization': '$token',
-      'Content-Type': 'application/json'
-    });
-    //Map response = await HttpHandler.postDioHttpMethod(url: DefaultApiString.createCv, data: data);
-    request.files.add(await http.MultipartFile.fromPath('image', image.path));
-    request.fields.addAll(data);
-    var response = await request.send();
+    print("token========$token");
+    print("Data========${data}");
+    Dio dio = Dio();
+    var header = {
+       'Authorization' : '$token',
+       'Content-Type' : 'multipart/form-data'
+    };
+    final payload = FormData.fromMap(data);
+   var response = await dio.post("${DefaultApiString.endPoint}${DefaultApiString.createCv}", data: payload,options: Options(headers: header)).catchError((vf) {
+     hideLoadingDialog();
+     showToastMessage(context: context, message: "Something went wrong !");
+     print('${vf}');
+     return Future.value();});
     if(response.statusCode == 200){
-      var responseData = await response.stream.toBytes();
-      String responseString = String.fromCharCodes(responseData);
-      CvModel cvModel = cvModelFromJson(responseString);
+      CvModel cvModel = cvModelFromJson(response.data);
       if (cvModel.status == 200) {
-        /*  var stringData = response['data'];
-      var data = json.decode(stringData);*/
         hideLoadingDialog();
         return cvModel;
       } else {
@@ -102,6 +100,33 @@ class CvRepository {
         showToastMessage(context: context, message: "Something went wrong !");
         return "Something went wrong !";
       }
+    // var request = http.MultipartRequest(
+    //   "POST",
+    //   Uri.parse("${DefaultApiString.endPoint}${DefaultApiString.createCv}"),
+    // );
+    //
+    // request.headers.addAll({
+    //   'Authorization': '$token',
+    //   'Content-Type': 'application/json'
+    // });
+    // //Map response = await HttpHandler.postDioHttpMethod(url: DefaultApiString.createCv, data: data);
+    // request.files.add(await http.MultipartFile.fromPath('image', image.path));
+    // request.fields.addAll(data);
+    // var response = await request.send();
+    // if(response.statusCode == 200){
+    //   var responseData = await response.stream.toBytes();
+    //   String responseString = String.fromCharCodes(responseData);
+    //   CvModel cvModel = cvModelFromJson(responseString);
+    //   if (cvModel.status == 200) {
+    //     /*  var stringData = response['data'];
+    //   var data = json.decode(stringData);*/
+    //     hideLoadingDialog();
+    //     return cvModel;
+    //   } else {
+    //     hideLoadingDialog();
+    //     showToastMessage(context: context, message: "Something went wrong !");
+    //     return "Something went wrong !";
+    //   }
     } else {
       hideLoadingDialog();
       return "Something went wrong !";

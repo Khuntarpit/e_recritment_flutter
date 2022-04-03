@@ -38,7 +38,7 @@ class _SkillScreenState extends State<SkillScreen> {
           children: [
             appbar(context: context, title: 'Skill', isTitle: true),
             titleText(title: 'Skill', textSize: 19),
-            textField(hintText: 'Enter Skill', maxLine: 6, controller: skill, isValidate: true, validationMassage: 'Skill'),
+            textField(hintText: 'Enter Skill', maxLine: 6, controller: skill, validationMassage: 'Skill'),
             Spacer(),
             commonButton(
                 title: 'SAVE',
@@ -47,7 +47,7 @@ class _SkillScreenState extends State<SkillScreen> {
                 isExpand: 10,
                 onTap: () {
                   if (formKey.currentState.validate()) {
-                   widget.skillData(skill.text);
+                   if(skill.text.isNotEmpty) widget.skillData(skill.text);
                    Navigator.pop(context);
                   }
                 })

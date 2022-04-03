@@ -9,7 +9,7 @@ void showToastMessage({@required BuildContext context,String message,})
       backgroundColor: AppColors.greyColor,
       textColor: AppColors.textFieldColor,
       duration: Toast.LENGTH_LONG,
-      gravity: Toast.CENTER,
+      gravity: Toast.BOTTOM,
       backgroundRadius: 10,
       border: Border.all(
         color: AppColors.textFieldColor,

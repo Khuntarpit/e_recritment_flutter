@@ -59,9 +59,9 @@ class _EducationScreenState extends State<EducationScreen> {
                     titleText(title: 'School / University', textSize: 19),
                     textField(hintText: 'Enter School / University', controller: university, isValidate: true, validationMassage: 'School / University'),
                     titleText(title: 'Grade / Score', textSize: 19),
-                    textField(hintText: 'Enter Grade / Score', controller: grade, isValidate: true, validationMassage: 'Grade / Score'),
+                    textField(hintText: 'Enter Grade / Score', controller: grade, isValidate: true, validationMassage: 'Grade / Score',keyBordType: TextInputType.number),
                     titleText(title: 'Year', textSize: 19),
-                    textField(hintText: 'Enter Year', controller: year, isValidate: true, validationMassage: 'Year'),
+                    textField(hintText: 'Enter Year', controller: year, isValidate: true, validationMassage: 'Year',keyBordType: TextInputType.number,),
                     SizedBox(
                       height: 30,
                     ),

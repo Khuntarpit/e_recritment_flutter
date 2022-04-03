@@ -64,7 +64,7 @@ class _SelectionRollState extends State<SelectionRoll> {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(() =>LoginScreen());
+                  Get.to(() =>LoginScreen(isAdmin: false,));
                 },
                 child: Container(
                   margin: EdgeInsets.symmetric(vertical: 5),

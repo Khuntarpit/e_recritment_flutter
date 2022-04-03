@@ -19,6 +19,11 @@ class InternShipScreen extends StatefulWidget {
 }
 
 class _InternShipScreenState extends State<InternShipScreen> {
+  String androidName = 'Android Developer';
+  String androidCompany = 'googleasiant Technolabs';
+  String graphicName = 'Graphics Designer';
+  String uiuxName = 'UI / UX Developer';
+  String graphicCompany = 'Googleasiant.com';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,35 +38,44 @@ class _InternShipScreenState extends State<InternShipScreen> {
                 children: [
                   jobCardView(
                       imagePath: ImagePath.g_logo,
-                      title: 'Android Developer',
-                      subTitle: 'googleasiant Technolabs',
+                      title: androidName,
+                      subTitle: androidCompany,
                       onTap: () {
                         Get.to(() => JobApplyScreen(
                               name: widget.name,
                               phone: widget.phone,
                               cvImage: widget.cvImage,
+                              title: androidName,
+                              companyName: androidCompany,
+                              imagePath: ImagePath.g_logo,
                             ));
                       }),
                   jobCardView(
                       imagePath: ImagePath.fb_logo,
-                      title: 'Graphics Designer',
-                      subTitle: 'Googleasiant.com',
+                      title: graphicName,
+                      subTitle: graphicCompany,
                       onTap: () {
                         Get.to(() => JobApplyScreen(
                               name: widget.name,
                               phone: widget.phone,
                               cvImage: widget.cvImage,
+                              title: graphicName,
+                              companyName: graphicCompany,
+                             imagePath: ImagePath.fb_logo,
                             ));
                       }),
                   jobCardView(
                       imagePath: ImagePath.g_logo,
-                      title: 'UI / UX Developer',
-                      subTitle: 'Googleasiant.com',
+                      title: uiuxName,
+                      subTitle: graphicCompany,
                       onTap: () {
                         Get.to(() => JobApplyScreen(
                               name: widget.name,
                               phone: widget.phone,
                               cvImage: widget.cvImage,
+                              title: uiuxName,
+                              companyName: graphicCompany,
+                              imagePath: ImagePath.g_logo,
                             ));
                       }),
                 ],

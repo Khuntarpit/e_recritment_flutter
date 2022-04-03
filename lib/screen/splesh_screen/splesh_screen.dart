@@ -9,6 +9,7 @@ import 'package:e_recruitment/screen/login_screen/login_screen.dart';
 import 'package:e_recruitment/screen/main_profile_screen/main_profile_screen.dart';
 import 'package:e_recruitment/screen/selecation_roll/selecation_roll_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -72,29 +73,33 @@ class _SplashScreenState extends State<SplashScreen> {
     if (isLogin == true) {
       if(isCv == true){
         Timer(Duration(seconds: 3), () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => MainProfileScreen()),
-          );
+          // Navigator.pushReplacement(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => MainProfileScreen()),
+          // );
+          Get.off(() => MainProfileScreen());
         });
       } else {
         Timer(Duration(seconds: 3), () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => CreateCv()),
-          );
+        //   Navigator.pushReplacement(
+        //     context,
+        //     MaterialPageRoute(builder: (context) => CreateCv()),
+        //   );
+          Get.off(() => CreateCv());
         });
       }
     } else if(isLogin == false) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => CompanyDashboard()),
-      );
+      // Navigator.pushReplacement(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => CompanyDashboard()),
+      // );
+      Get.off(() => CompanyDashboard());
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => SelectionRoll()),
-      );
+      // Navigator.pushReplacement(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => SelectionRoll()),
+      // );
+      Get.off(() => SelectionRoll());
     }
   }
 }

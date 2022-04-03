@@ -11,9 +11,12 @@ import 'package:get/get.dart';
 class JobApplyScreen extends StatefulWidget {
   String cvImage;
   String name;
+  String title;
+  String companyName;
   String phone;
+  String imagePath;
 
-  JobApplyScreen({this.phone,this.name,this.cvImage});
+  JobApplyScreen({this.phone,this.name,this.title,this.companyName,this.cvImage,this.imagePath});
   @override
   _JobApplyScreenState createState() => _JobApplyScreenState();
 }
@@ -38,18 +41,18 @@ class _JobApplyScreenState extends State<JobApplyScreen> {
                   child: Column(
                     children: [
                       Image.asset(
-                        ImagePath.g_logo,
+                        widget.imagePath,
                         height: 90,
                       ),
                       Text(
-                        'Android Developer',
+                        widget.title,
                         style: jobTitleStyle,
                       ),
                       SizedBox(
                         height: 5,
                       ),
                       Text(
-                        'Goodleasiant Technolabs',
+                        widget.companyName,
                         style: jobSubTitle,
                       ),
                       SizedBox(

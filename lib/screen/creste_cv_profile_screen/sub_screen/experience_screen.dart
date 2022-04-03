@@ -1,6 +1,8 @@
+import 'package:e_recruitment/config/app_colors.dart';
 import 'package:e_recruitment/model/cv_model.dart';
 import 'package:e_recruitment/widget/app_bar/app_bar.dart';
 import 'package:e_recruitment/widget/common/navigate_button.dart';
+import 'package:e_recruitment/widget/common/style.dart';
 import 'package:e_recruitment/widget/common/text_field.dart';
 import 'package:e_recruitment/widget/common/title_text.dart';
 import 'package:flutter/material.dart';
@@ -80,7 +82,7 @@ class _ExperienceScreenState extends State<ExperienceScreen> {
                     titleText(title: 'Job Title', textSize: 19),
                     textField(hintText: 'Enter Job Title', isValidate: true, controller: jobTitle, validationMassage: 'Job Title'),
                      titleText(title: 'Job Experience', textSize: 19),
-                    textField(hintText: 'Enter Job Experience', isValidate: true, controller: jobExperience, validationMassage: 'Job Experience'),
+                    textField(hintText: 'Enter Job Experience', isValidate: true, controller: jobExperience, validationMassage: 'Job Experience',keyBordType: TextInputType.number),
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -88,7 +90,43 @@ class _ExperienceScreenState extends State<ExperienceScreen> {
                           child: Column(
                             children: [
                               titleText(title: 'Start Date', textSize: 19),
-                              textField(hintText: 'Enter Start Date', isValidate: true, controller: startDate, validationMassage: 'Start Date'),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 1),
+                                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 7.5),
+                                decoration: BoxDecoration(color: AppColors.textFieldColor, boxShadow: newBoxShadow, borderRadius: BorderRadius.circular(30)),
+                                child: TextFormField(
+                                  controller: startDate,
+                                  readOnly: true,
+                                  onTap: () {
+                                    FocusScope.of(context).requestFocus(new FocusNode());
+                                    showDatePicker(
+                                      context: context,
+                                      initialDate: DateTime.now(),
+                                      firstDate: DateTime(1850, 1),
+                                      lastDate: DateTime(2050,12),
+                                    ) .then((selectedDate) {
+                                      //TODO: handle selected date
+                                      if(selectedDate!=null){
+                                        startDate.text = selectedDate.toString().substring(0,11);
+                                      }
+                                    });
+                                  },
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: "Select Start Date",
+                                    hintStyle: TextStyle(fontSize: 15),
+                                  ),
+                                  keyboardType: TextInputType.text,
+                                  maxLines: 1,
+                                  validator: (value) {
+                                    if (value.length == 0) {
+                                      return "Start Date is Required !";
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              // textField(hintText: 'Select Start Date', isValidate: true, controller: startDate, validationMassage: 'Start Date'),
                             ],
                           ),
                         ),
@@ -96,7 +134,43 @@ class _ExperienceScreenState extends State<ExperienceScreen> {
                           child: Column(
                             children: [
                               titleText(title: 'End Date', textSize: 19),
-                              textField(hintText: 'Enter End Date', isValidate: true, controller: endDate, validationMassage: 'End Date'),
+                              // textField(hintText: 'Select End Date', isValidate: true, controller: endDate, validationMassage: 'End Date'),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 1),
+                                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 7.5),
+                                decoration: BoxDecoration(color: AppColors.textFieldColor, boxShadow: newBoxShadow, borderRadius: BorderRadius.circular(30)),
+                                child: TextFormField(
+                                  controller: endDate,
+                                  readOnly: true,
+                                  onTap: () {
+                                    FocusScope.of(context).requestFocus(new FocusNode());
+                                    showDatePicker(
+                                      context: context,
+                                      initialDate: DateTime.now(),
+                                      firstDate: DateTime(1850, 1),
+                                      lastDate: DateTime(2050,12),
+                                    ) .then((selectedDate) {
+                                      //TODO: handle selected date
+                                      if(selectedDate!=null){
+                                        endDate.text = selectedDate.toString().substring(0,11);
+                                      }
+                                    });
+                                  },
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: "Select End Date",
+                                    hintStyle: TextStyle(fontSize: 15),
+                                  ),
+                                  keyboardType: TextInputType.text,
+                                  maxLines: 1,
+                                  validator: (value) {
+                                    if (value.length == 0) {
+                                      return "End Date is Required !";
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
                             ],
                           ),
                         )

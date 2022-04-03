@@ -37,7 +37,7 @@ class _ObjectiveScreenState extends State<ObjectiveScreen> {
           children: [
             appbar(context: context, title: 'Objective', isTitle: true),
             titleText(title: 'Objective', textSize: 19),
-            textField(hintText: 'Enter Objective', maxLine: 8, isValidate: true, controller: objective, validationMassage: 'Objective'),
+            textField(hintText: 'Enter Objective', maxLine: 8, controller: objective, validationMassage: 'Objective'),
             Spacer(),
             commonButton(
                 title: 'SAVE',
@@ -46,7 +46,7 @@ class _ObjectiveScreenState extends State<ObjectiveScreen> {
                 isExpand: 10,
                 onTap: () {
                   if (formKey.currentState.validate()) {
-                    widget.objectiveData(objective.text);
+                    if(objective.text.isNotEmpty) widget.objectiveData(objective.text);
                     Navigator.pop(context);
                   }
                 })
