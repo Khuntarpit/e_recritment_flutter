@@ -107,7 +107,7 @@ class _ExperienceScreenState extends State<ExperienceScreen> {
                                     ) .then((selectedDate) {
                                       //TODO: handle selected date
                                       if(selectedDate!=null){
-                                        startDate.text = selectedDate.toString().substring(0,11);
+                                        startDate.text =  selectedDate.toLocal().toString().substring(0,11);
                                       }
                                     });
                                   },
@@ -152,7 +152,7 @@ class _ExperienceScreenState extends State<ExperienceScreen> {
                                     ) .then((selectedDate) {
                                       //TODO: handle selected date
                                       if(selectedDate!=null){
-                                        endDate.text = selectedDate.toString().substring(0,11);
+                                        endDate.text = selectedDate.toLocal().toString().substring(0,11);
                                       }
                                     });
                                   },
