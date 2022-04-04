@@ -55,7 +55,7 @@ class _SelectionRollState extends State<SelectionRoll> {
                         height: 15,
                       ),
                       Text(
-                        "As a Company",
+                        "As a Admin",
                         style: TextStyle(fontSize: 15),
                       ),
                     ],

@@ -20,6 +20,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'sub_screens/sub_inquiry_screen.dart';
+
 // ignore: must_be_immutable
 class MainProfileScreen extends StatefulWidget {
 
@@ -54,13 +56,13 @@ class _MainProfileScreenState extends State<MainProfileScreen> {
     'Job Opening',
     'Materials',
     'History',
-    'Notification',
+    'Inquiry',
   ];
   List image2 = [
     ImagePath.job,
     ImagePath.materials,
     ImagePath.history,
-    ImagePath.notification,
+    ImagePath.resume,
   ];
   List routing2 = [];
 
@@ -118,7 +120,7 @@ class _MainProfileScreenState extends State<MainProfileScreen> {
         Get.to(() => HistoryScreen());
       },
           () {
-        Get.to(() => SubNotificationScreen());
+        Get.to(() => SubInquiryScreen());
       },
     ];
     super.initState();

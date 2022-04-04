@@ -29,6 +29,44 @@ class LoginRepository{
     }
   }
 
+  static createInquiryData({
+    @required BuildContext context,
+    @required bodyData
+  }) async {
+    showLoadingDialog();
+    Map response = await HttpHandler.postHttpMethod(
+      url: "${DefaultApiString.createInquiry}",
+      data: bodyData
+    );
+    if (response["error_description"] == null) {
+      hideLoadingDialog();
+      return jsonDecode(response['body']);
+    } else if (response["error_description"] != null) {
+      hideLoadingDialog();
+      return jsonDecode(response['body']);
+    } else {
+      hideLoadingDialog();
+      return null;
+    }
+  }
+  static getInquiryData({
+    @required BuildContext context,
+  }) async {
+    showLoadingDialog();
+    Map response = await HttpHandler.getHttpMethod(
+        url: "${DefaultApiString.getInquiry}",
+    );
+    if (response["error_description"] == null) {
+      hideLoadingDialog();
+      return jsonDecode(response['body']);
+    } else if (response["error_description"] != null) {
+      hideLoadingDialog();
+      return jsonDecode(response['body']);
+    } else {
+      hideLoadingDialog();
+      return null;
+    }
+  }
   static getQuestionData({
     @required BuildContext context,
   }) async {

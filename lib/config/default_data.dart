@@ -10,6 +10,8 @@ class DefaultApiString {
   static const String adminLogin = "admin/login";
   static const String examQuestions = "user/exam";
   static const String submitExam = "user/submitExam";
+  static const String getInquiry = "inquiry/getInquiry";
+  static const String createInquiry = "inquiry/createInquiry";
 
   static const String createCv = "cv/create";
 

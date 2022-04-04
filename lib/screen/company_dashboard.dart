@@ -14,6 +14,8 @@ import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'admin_inquiries_screen.dart';
+
 class CompanyDashboard extends StatefulWidget {
   @override
   _CompanyDashboardState createState() => _CompanyDashboardState();
@@ -21,11 +23,11 @@ class CompanyDashboard extends StatefulWidget {
 
 class _CompanyDashboardState extends State<CompanyDashboard> {
 
-  List name = ['Schedule', 'Results', 'Notification', 'Services'];
+  List name = ['Schedule', 'Results', 'Inquiries', 'Services'];
   List image = [
     ImagePath.calender,
     ImagePath.internship,
-    ImagePath.notification,
+    ImagePath.resume,
     ImagePath.resume,
   ];
   List routing = [];
@@ -79,6 +81,7 @@ class _CompanyDashboardState extends State<CompanyDashboard> {
               ),
               Container(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,55 +89,8 @@ class _CompanyDashboardState extends State<CompanyDashboard> {
                         Container(
                           width: 70,
                         ),
-                        /*cvImage == null
-                            ? Container(
-                                margin: EdgeInsets.only(top: 40),
-                                height: 100,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  boxShadow: newBoxShadow,
-                                  image: DecorationImage(
-                                    image: AssetImage(ImagePath.profileImage),
-                                  ),
-                                ),
-                              )
-                            : cvImage != null
-                                ? Container(
-                                    margin: EdgeInsets.only(top: 40),
-                                    height: 100,
-                                    width: 100,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      boxShadow: newBoxShadow,
-                                      image: DecorationImage(image: NetworkImage(cvImage), fit: BoxFit.cover),
-                                    ),
-                                  )
-                                : widget.user != null
-                                    ? Container(
-                                        margin: EdgeInsets.only(top: 40),
-                                        height: 100,
-                                        width: 100,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          boxShadow: newBoxShadow,
-                                          image: DecorationImage(image: NetworkImage(widget.user.photoURL), fit: BoxFit.cover),
-                                        ),
-                                      )
-                                    : Container(
-                                        margin: EdgeInsets.only(top: 40),
-                                        height: 100,
-                                        width: 100,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          boxShadow: newBoxShadow,
-                                          image: DecorationImage(
-                                            image: AssetImage(ImagePath.profileImage),
-                                          ),
-                                        ),
-                                      ),*/
                         Container(
-                          margin: EdgeInsets.only(top: 40),
+                          margin: EdgeInsets.only(top: 80),
                           height: 100,
                           width: 100,
                           decoration: BoxDecoration(
@@ -161,7 +117,12 @@ class _CompanyDashboardState extends State<CompanyDashboard> {
                       ],
                     ),
                     SizedBox(
-                      height: 13,
+                      height: 35,
+                    ),
+                    Text("Admin",style: TextStyle(color: Colors.white,fontSize: 30),),
+                    Text("admin@gmail.com",style: TextStyle(color: Colors.white,fontSize: 15),),
+                    SizedBox(
+                      height: 35,
                     ),
                     // userData != null
                     //     ? Text(
@@ -206,7 +167,7 @@ class _CompanyDashboardState extends State<CompanyDashboard> {
                                 title: name[2],
                                 imagePath: image[2],
                                 onTap: (){
-                                  Get.to(() => SubNotificationScreen());
+                                  Get.to(() => AdminInquiriesScreen());
                                 },
                               ),
                               profileCardView(
