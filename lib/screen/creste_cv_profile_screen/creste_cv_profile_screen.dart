@@ -141,7 +141,7 @@ class _CreateCvProfileState extends State<CreateCvProfile> {
                       }),
                   commonListView(
                       isShowFillDataTrue: companyName == null ? false : true,
-                      title: 'Experience',
+                      title: 'Experience (OPTIONAL)',
                       imagePath: ImagePath.professional,
                       onTap: () {
                         Get.to(() => ExperienceScreen(
@@ -303,8 +303,8 @@ class _CreateCvProfileState extends State<CreateCvProfile> {
                           showToastMessage(context: context, message: 'please Fill up Personal details');
                         } else if (university == null) {
                           showToastMessage(context: context, message: 'please Fill up Education');
-                        } else if (companyName == null) {
-                          showToastMessage(context: context, message: 'please Fill up Experience');
+                        // } else if (companyName == null) {
+                        //   showToastMessage(context: context, message: 'please Fill up Experience');
                         // } else if (skill == null) {
                         //   showToastMessage(context: context, message: 'please Fill up Skill');
                         // } else if (objective == null) {

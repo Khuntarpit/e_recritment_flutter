@@ -45,20 +45,20 @@ class CvRepository {
     showLoadingDialog();
 
     var data = {
-      "userId": userId,
+      if(userId != null) "userId": userId,
       "name": name,
-      "profile_address": profileAddress,
+      if(profileAddress != null)  "profile_address": profileAddress,
       "email": email,
       "phone": phone,
       "degree": degree,
       "university": university,
       "grade": grade,
       "year": year,
-      "company_name": companyName,
-      "job_title": jobTitle,
-      "start_date": startDate,
-      "end_date": endDate,
-      "details": details,
+      if(companyName != null)  "company_name": companyName,
+      if(jobTitle != null)  "job_title": jobTitle,
+      if(startDate != null)  "start_date": startDate,
+      if(endDate != null)  "end_date": endDate,
+      if(details != null)  "details": details,
       if(skill != null)   "skill": skill,
       if(objective != null)   "objective": objective,
       if(refName != null)  "ref_name": refName,
@@ -71,7 +71,7 @@ class CvRepository {
      if(helpTips != null) "help_tips": helpTips,
       "exam_result": "examResult",
       "isActive": "true",
-      "experience": jobExperience
+      if(jobExperience != null)  "experience": jobExperience
     };
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     var token = sharedPreferences.getString(PrefString.token);
