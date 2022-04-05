@@ -1,3 +1,4 @@
+import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:e_recruitment/config/app_colors.dart';
 import 'package:e_recruitment/config/image_path.dart';
 import 'package:e_recruitment/screen/main_profile_screen/main_profile_screen.dart';
@@ -7,6 +8,7 @@ import 'package:e_recruitment/widget/common/exam_card.dart';
 import 'package:e_recruitment/widget/common/navigate_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
@@ -60,8 +62,11 @@ class _StartInterviewScreenState extends State<StartInterviewScreen> {
                       title: 'START INTERVIEW MEETING',
                       isExpand: 40,
                       textSize: 14,
-                      onTap: (){
-                        Get.to(() =>CallPage());
+                      onTap: ()async{
+                        await _handleCameraAndMic(Permission.camera);
+                        await _handleCameraAndMic(Permission.microphone);
+                        Get.to(() =>CallPage(          channelName: "Arpit",
+                          role: ClientRole.Broadcaster,));
                       }
                   ),
                 ],
@@ -71,5 +76,10 @@ class _StartInterviewScreenState extends State<StartInterviewScreen> {
         ],
       ),
     );
+  }
+
+  Future<void> _handleCameraAndMic(Permission permission) async {
+    final status = await permission.request();
+    print(status);
   }
 }
