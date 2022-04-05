@@ -73,7 +73,6 @@ class _AdminInquiriesScreenState extends State<AdminInquiriesScreen> {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  Get.to(() => AdminExamResultsScreen(userData[index]['exam']));
                 },
                 child: Container(
                   padding: EdgeInsets.only(top: 20,bottom: 20,left: 20),

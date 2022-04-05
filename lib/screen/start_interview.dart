@@ -55,8 +55,8 @@ class _StartInterviewScreenState extends State<StartInterviewScreen> {
                       description: 'Reference site about Lorem Ipsum, giving information on its origins, as well as a ... Traductions: Pouvez- .',
                       imagePath: ImagePath.interview,
                       isText: true,
-                      date: '02 April',
-                      time: '10 AM'
+                      date: '05 April',
+                      time: '12 AM'
                   ),
                   commonButton(
                       title: 'START INTERVIEW MEETING',
