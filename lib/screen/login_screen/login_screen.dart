@@ -151,6 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
       sharedPreferences.setString("id", data.id);
       // sharedPreferences.setString("cvID", data.cvIds[0].id);
       sharedPreferences.setBool(PrefString.isLoginAdmin, data.role == "admin" ? false : true);
+      sharedPreferences.setBool(PrefString.isCreatedCv, true);
     });
     print("isLogin------${sharedPreferences.get(PrefString.isLoginAdmin)}");
     print("Login Model------${sharedPreferences.get(PrefString.loginModel)}");
