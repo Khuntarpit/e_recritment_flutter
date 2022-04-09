@@ -14,6 +14,7 @@ class DefaultApiString {
   static const String createInquiry = "inquiry/createInquiry";
 
   static const String createCv = "cv/create";
+  static const String getAllCv = "cv/getAll";
 
   static const String forgotPassword = "user/forgatePassword";
 

@@ -67,6 +67,24 @@ class LoginRepository{
       return null;
     }
   }
+  static getAllCvData({
+    @required BuildContext context,
+  }) async {
+    showLoadingDialog();
+    Map response = await HttpHandler.getHttpMethod(
+      url: "${DefaultApiString.getAllCv}",
+    );
+    if (response["error_description"] == null) {
+      hideLoadingDialog();
+      return jsonDecode(response['body']);
+    } else if (response["error_description"] != null) {
+      hideLoadingDialog();
+      return jsonDecode(response['body']);
+    } else {
+      hideLoadingDialog();
+      return null;
+    }
+  }
   static getQuestionData({
     @required BuildContext context,
   }) async {

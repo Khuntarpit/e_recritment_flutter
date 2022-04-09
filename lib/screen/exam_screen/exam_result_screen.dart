@@ -115,14 +115,14 @@ class _ExamResultScreenState extends State<ExamResultScreen> {
                                       style: jobTextStyle,
                                     ),
                                     SizedBox(width: 5,),
-                                    Text('20 / 34'),
+                                    Text('${widget.attemptQuestions*10} / 100'),
                                     SizedBox(width: 7,),
                                     Container(
                                       width:
                                           MediaQuery.of(context).size.width / 3,
                                       child: SliderTheme(
                                         child: Slider(
-                                          value: question,
+                                          value: widget.attemptQuestions.toDouble(),
                                           max: 10,
                                           min: 0,
                                           activeColor: question == 100

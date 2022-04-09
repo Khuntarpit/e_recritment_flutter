@@ -1,6 +1,8 @@
 import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:e_recruitment/config/app_colors.dart';
 import 'package:e_recruitment/config/image_path.dart';
+import 'package:e_recruitment/screen/admin_cvlist_screen.dart';
+import 'package:e_recruitment/screen/admin_cvs_screen.dart';
 import 'package:e_recruitment/screen/admin_results_screen.dart';
 import 'package:e_recruitment/screen/main_profile_screen/sub_screens/resume.dart';
 import 'package:e_recruitment/screen/main_profile_screen/sub_screens/sub_notification_screen.dart';
@@ -23,12 +25,13 @@ class CompanyDashboard extends StatefulWidget {
 
 class _CompanyDashboardState extends State<CompanyDashboard> {
 
-  List name = ['Schedule', 'Results', 'Inquiries', 'Services'];
+  List name = ['Schedule', 'Results', 'Inquiries', 'Services', 'User CVs'];
   List image = [
     ImagePath.calender,
     ImagePath.internship,
     ImagePath.resume,
     ImagePath.resume,
+    ImagePath.user,
   ];
   List routing = [];
   Future<void> onJoin() async {
@@ -175,6 +178,22 @@ class _CompanyDashboardState extends State<CompanyDashboard> {
                                 imagePath: image[3],
                                 onTap: (){
                                   Get.to(() => ServicesScreen());
+                                },
+                              ),
+                            ]),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              profileCardView(
+                                title: name[4],
+                                imagePath: image[4],
+                                onTap: (){
+                                  Get.to(() => AdminCvListScreen());
                                 },
                               ),
                             ]),

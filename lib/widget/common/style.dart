@@ -20,6 +20,12 @@ final jobTitleStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+final profileTitleStyle = TextStyle(
+  fontSize: 18,
+  color: AppColors.navyBlueColor,
+  fontWeight: FontWeight.bold,
+);
+
 final jobSubTitle = TextStyle(
   fontSize: 13,
   color: AppColors.navyBlueColor,

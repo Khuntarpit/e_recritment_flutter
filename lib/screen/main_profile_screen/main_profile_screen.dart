@@ -42,10 +42,11 @@ class _MainProfileScreenState extends State<MainProfileScreen> {
   String education;
   String skill;
 
-  List name = ['profile', 'Internship', 'Schedule', 'Services'];
+  // List name = ['profile', 'Internship', 'Schedule', 'Services'];
+  List name = ['profile', 'Schedule', 'Services'];
   List image = [
     ImagePath.user,
-    ImagePath.internship,
+    // ImagePath.internship,
     ImagePath.calender,
     ImagePath.resume,
   ];
@@ -55,13 +56,13 @@ class _MainProfileScreenState extends State<MainProfileScreen> {
   List name2 = [
     'Job Opening',
     'Materials',
-    'History',
+    // 'History',
     'Inquiry',
   ];
   List image2 = [
     ImagePath.job,
     ImagePath.materials,
-    ImagePath.history,
+    // ImagePath.history,
     ImagePath.resume,
   ];
   List routing2 = [];
@@ -86,14 +87,14 @@ class _MainProfileScreenState extends State<MainProfileScreen> {
           },
         ));
       },
-          () {
-        Get.to(() => InternShipScreen(
-          internShip: true,
-          cvImage: userData.data.image[0].url,
-          phone: userData.data.phone,
-          name: userData.data.name,
-        ));
-      },
+      //     () {
+      //   Get.to(() => InternShipScreen(
+      //     internShip: true,
+      //     cvImage: userData.data.image[0].url,
+      //     phone: userData.data.phone,
+      //     name: userData.data.name,
+      //   ));
+      // },
           () {
         Get.to(() => ExamScreen(
           cvImage: userData.data.image[0].url,
@@ -116,9 +117,9 @@ class _MainProfileScreenState extends State<MainProfileScreen> {
           () {
         Get.to(() => ReadingMaterial());
       },
-          () {
-        Get.to(() => HistoryScreen());
-      },
+      //     () {
+      //   Get.to(() => HistoryScreen());
+      // },
           () {
         Get.to(() => SubInquiryScreen());
       },
@@ -278,7 +279,7 @@ class _MainProfileScreenState extends State<MainProfileScreen> {
                               )
                         : Container(),*/
                     SizedBox(
-                      height: MediaQuery.of(context).size.width / 35,
+                      height: MediaQuery.of(context).size.width / 5,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -286,7 +287,7 @@ class _MainProfileScreenState extends State<MainProfileScreen> {
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: List.generate(
-                              4,
+                              3,
                               (index) => profileCardView(
                                 title: name[index],
                                 imagePath: image[index],
@@ -296,7 +297,7 @@ class _MainProfileScreenState extends State<MainProfileScreen> {
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: List.generate(
-                              4,
+                              3,
                               (index) => profileCardView(
                                 title: name2[index],
                                 imagePath: image2[index],
