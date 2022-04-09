@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           }),
                     isValidate: true
                   ),
-                  Row(
+                  if(widget.isAdmin == false) Row(
                     children: [
                       Checkbox(
                         onChanged: (v) {
@@ -126,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
                     },
                   ),
-                  outLineBorderConatiner(
+                 if(widget.isAdmin == false) outLineBorderConatiner(
                     title: 'Sign up',
                     padding: 80,
                     onTap: () {
