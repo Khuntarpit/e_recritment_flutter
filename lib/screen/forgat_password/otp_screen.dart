@@ -64,7 +64,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 ),
                 commonButton(
                     marginHorizontal: 110,
-                    isExpand: 10,title: 'APPLY', onTap: () {Get.to(() => LoginScreen());}),
+                    isExpand: 10,title: 'APPLY', onTap: () {Get.to(() => LoginScreen(isAdmin: false,));}),
                 Container(),
               ],
             ),

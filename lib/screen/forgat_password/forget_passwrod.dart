@@ -59,10 +59,10 @@ class _ForgetPasswordState extends State<ForgetPassword> {
   void forgotPassword() async {
     ForgotPasswordModel forgotPasswordModel = await ForgotPasswordRepository.forgotPassword(email: emilController.text);
     if (forgotPasswordModel.status == 200) {
-      showToastMessage(context: context, message: forgotPasswordModel.message);
+      showToastMessage(context: context, message: "Your new password has been sent to your email please check mail.");
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => LoginScreen()),
+        MaterialPageRoute(builder: (context) => LoginScreen(isAdmin: false,)),
       );
     }
   }

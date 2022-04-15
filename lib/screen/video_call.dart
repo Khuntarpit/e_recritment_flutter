@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 const APP_ID = "7f4485bc5a8d4cdf903084f2a03d4cc6";
-const Token = "0067f4485bc5a8d4cdf903084f2a03d4cc6IADftlWx24vnkeUGAlEA67zt61BRo8XqCr0DsNZN1p4T82jjIdUAAAAAEABrDG+dP29MYgEAAQA+b0xi";
+const Token = "0067f4485bc5a8d4cdf903084f2a03d4cc6IADX/QaPMCmMTsyfH13PA8/g2IJRbJG854VqDutrnTsnwmjjIdUAAAAAEAA3CeSjxjpUYgEAAQDEOlRi";
 
 class CallPage extends StatefulWidget {
   /// non-modifiable channel name of the page
